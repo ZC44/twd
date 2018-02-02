@@ -3,10 +3,12 @@ from rango.models import *
 
 # Register your models here.
 class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
     fieldsets = [
-         (None, {'fields': ['name']}),
+         (None, {'fields': ['name', 'slug']}),
          ('Data', {'fields':['likes','views']}),
     ]
+
 class PageAdmin(admin.ModelAdmin):
     fieldsets = [
          (None, {'fields': ['title', 'url', 'category']}),
