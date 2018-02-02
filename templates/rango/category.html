@@ -10,6 +10,7 @@
 
         <div>
             {% if category %}
+
                 <h1>{{ category.name }}</h1>
                 {% if pages %}
                     <ul>
@@ -20,6 +21,9 @@
                 {% else %}
                     <strong>No pages currently in category.</strong>
                 {% endif %}
+
+                <a href="/rango/category/{{category.slug}}/add_page/">Add Page</a> <br/>
+
             {% else %}
                 The specified category does not exist!
             {% endif %}
