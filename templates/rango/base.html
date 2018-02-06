@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{%  load staticfiles %}
+{% load rango_template_tags %}
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rago - {% block title_block %}{% endblock %}</title>
+</head>
+
+<body>
+    <div>
+        {% block body_block %}
+        {% endblock %}
+    </div>
+    <hr/>
+    <div>
+        {% block sidebar_block %}
+            {% get_category_list category %}
+        {% endblock %}
+    </div>
+    <div>
+        <ul>
+            {% block link_block %}
+            {% endblock %}
+        </ul>
+    </div>
+</body>
+
+</html>

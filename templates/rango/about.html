@@ -1,16 +1,17 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
 
-<html>
+{% block title_block %}
+    About
+{% endblock %}
 
-    <head>
-        <title>About</title>
-    </head>
+{% block body_block %}
+    <div>
+        This tutorial has been put together by Zahné
+    </div>
+    <img src="{{ MEDIA_URL }}cat.jpg" alt="Cat!"/>
+{% endblock %}
 
-    <body>
-        <div>
-            This tutorial has been put together by Zahné
-        </div>
-        <img src="{{ MEDIA_URL }}cat.jpg" alt="Cat!"/>
-    </body>
-</html>
+{% block link_block %}
+    <li><a href="{% url 'index' %}">Index</a></li>
+{% endblock %}
